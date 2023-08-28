@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YaStreaming - Plateforme de Contenu Multimédia</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        /* Réinitialisation */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styles généraux */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* En-tête */
+.header {
+    background-color: #495E7B;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.logo {
+    font-size: 24px;
+    color: #fff;
+}
+
+.logo-highlight {
+    color: #9FE8FF;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+}
+
+.menu-item {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.menu-item:hover {
+    color: #9FE8FF;
+}
+
+.auth-button {
+    text-decoration: none;
+    background-color: #495E7B;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    margin-left: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.auth-button:hover {
+    background-color: #9FE8FF;
+}
+
+/* Section Vidéo en vedette */
+.featured-video {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.video-player {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.video-button {
+    background-color: #495E7B;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.video-button:hover {
+    background-color: #9FE8FF;
+}
+/* ... (les styles généraux restent inchangés) ... */
+
+/* Section Grille de vidéos */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin: 40px auto;
+    max-width: 1200px;
+}
+
+.video-thumbnail {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.video-thumbnail img {
+    width: 17%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.video-thumbnail:hover img {
+    transform: scale(1.05);
+}
+
+.video-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.video-thumbnail:hover .video-info {
+    opacity: 1;
+}
+
+.video-title {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.video-description {
+    font-size: 12px;
+}
+
+/* ... (les médias queries restent inchangés) ... */
+
+/* Footer */
+.footer {
+    background-color: #1E3A56;
+    color: #b0b0b0;
+    padding: 20px 0;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-section {
+    flex-basis: 25%;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 5px;
+}
+
+.social-icon {
+    font-size: 24px;
+    color: #fff;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.contact-info {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.footer-text {
+    font-size: 14px;
+}
+
+/* Médias queries pour la réactivité */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .menu {
+        margin-top: 10px;
+    }
+
+    .auth-button {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .featured-video {
+        margin-top: 20px;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <h1>Ya<span class="logo-highlight">Streaming</span></h1>
+        </div>
+        <nav class="menu">
+            <a href="#" class="menu-item">Accueil</a>
+            <a href="#" class="menu-item">Musique/Clip</a>
+            <a href="#" class="menu-item">Film</a>
+            <a href="#" class="menu-item">Dessin animé</a>
+            <a href="#" class="menu-item">Découvertes</a>
+        </nav>
+        <div class="profile">
+            <a href="./HTML/inscription.html" class="auth-button">Inscription</a>
+            <a href="./HTML/connexion.html" class="auth-button">Connexion</a>
+        </div>
+    </header>
+
+    <section class="featured-video">
+        <video class="video-player" controls>
+            <source src="IMG-VID/divertissement5.mp4" type="video/mp4">
+        </video>
+        <button class="video-button">Vidéo du jour</button>
+    </section>
+
+    <!-- Autres sections de vidéos -->
+    
+    <div class="div-video-principale1" style="justify-content: center;position: relative; align-items: center;  display: flex; ">
+        <img src="IMG-VID/music.jpeg"
+            style="border: 1px solid; border-radius: 7px; position: relative; margin: 2px 5px auto; height: 113px; width: 19%;"
+            class="video-principale3">
+        <img src="IMG-VID/decouv_a.jpeg" src="IMG-VID/film_m_mr.jpeg"
+            style="border: 1px solid; border-radius: 7px; position: relative; margin:  2px 5px auto; width: 19%; height: 113px;"
+            class="video-principale3">
+        <img src="IMG-VID/film_a.jpeg"
+            style="border: 1px solid; border-radius: 7px; position: relative; margin:  2px 5px auto; width: 19%; height: 113px;"
+            class="video-principale3" >
+        <img src="IMG-VID/dessin_a.jpeg"
+            style="border: 1px solid; border-radius: 7px; position: relative; margin:  2px 5px auto; width: 19%; height: 113px; "
+            class="video-principale3" >
+        <img src="IMG-VID/film_m_mr.jpeg" style="border: 1px solid; border-radius: 7px; position: relative; margin:  2px 5px auto; width: 19% ;height: 113px; "class="video-principale3" >
+    </div>
+
+    <div class="div-video-principale2">
+        <div style="justify-content: center;position: relative; align-items: center; display: inline; ">
+            <h5>Film/série</h5>
+            <div class="video-thumbnail">
+                <video src="" frameborder="0" src="./IMG-VID/blague1.mp4" alt="Nom de la vidéo"><source src="./IMG-VID/blague2.mp4"></video>
+                <div class="video-info">
+                    <p class="video-title">Nom de la vidéo</p>
+                    <p class="video-description">Description courte de la vidéo</p>
+                </div>
+            </div>
+            
+
+            <div class="video-thumbnail">
+                <iframe frameborder="0" src="./IMG-VID/blague1.mp4" alt="Nom de la vidéo"></iframe>
+                <div class="video-info">
+                    <p class="video-title">Nom de la vidéo</p>
+                    <p class="video-description">Description courte de la vidéo</p>
+                </div>
+            </div>
+
+            <div class="video-thumbnail">
+                <iframe frameborder="0" src="./IMG-VID/blague1.mp4" alt="Nom de la vidéo"></iframe>
+                <div class="video-info">
+                    <p class="video-title">Nom de la vidéo</p>
+                    <p class="video-description">Description courte de la vidéo</p>
+                </div>
+            </div>
+
+            <div class="video-thumbnail">
+                <iframe frameborder="0" src="./IMG-VID/blague1.mp4" alt="Nom de la vidéo"></iframe>
+                <div class="video-info">
+                    <p class="video-title">Nom de la vidéo</p>
+                    <p class="video-description">Description courte de la vidéo</p>
+                </div>
+            </div>
+
+            <div class="video-thumbnail">
+                <iframe frameborder="0" src="./IMG-VID/blague1.mp4" alt="Nom de la vidéo"></iframe>
+                <div class="video-info">
+                    <p class="video-title">Nom de la vidéo</p>
+                    <p class="video-description">Description courte de la vidéo</p>
+                </div>
+            </div>
+            
+            <div class="video-thumbnail">
+                <iframe frameborder="0" src="./IMG-VID/blague1.mp4" alt="Nom de la vidéo"></iframe>
+                <div class="video-info">
+                    <p class="video-title">Nom de la vidéo</p>
+                    <p class="video-description">Description courte de la vidéo</p>
+                </div>
+            </div>
+            <p>
+                <a href="HTML/connexion.html">voir plus</a>
+            </p>
+        </div>
+   
+        <div class="div-video-principale2">
+            <div style="justify-content: center;position: relative; align-items: center; display: inline; ">
+                <h5>Divertisssement</h5>
+                <video style="border: 1px solid; position: relative; margin: 2px  2px  auto; width: 16%; "
+                    class="video-principale2" controls>
+                    <source src="IMG-VID/devertissement3.mp4" type="video/mp4">
+                </video> 
+
+                <video style="border: 1px solid; position: relative; margin: 2px  2px  auto; width: 16%; "
+                    class="video-principale2" controls>
+                    <source src="IMG-VID/divertissement1.mp4" type="video/mp4">
+                </video>
+
+                <video style="border: 1px solid; position: relative; margin: 2px  2px  auto; width: 16%; "
+                    class="video-principale2" controls>
+                    <source src="IMG-VID/divertissement2.mp4" type="video/mp4">
+                </video>
+
+                <video style="border: 1px solid; position: relative; margin: 2px  2px  auto; width: 16%; "
+                    class="video-principale2" controls>
+                    <source src="IMG-VID/divertissement6.mp4" type="video/mp4">
+                </video>
+
+                <video style="border: 1px solid; position: relative; margin: 2px  2px  auto; width: 16%; "
+                    class="video-principale2" controls>
+                    <source src="IMG-VID/divertissement5.mp4" type="video/mp4"> 
+                </video>
+
+                <video style="border: 1px solid; position: relative; margin: 2px  2px  auto; width: 16%; "
+                    class="video-principale2" controls>
+                    <source src="IMG-VID/divertissement5.mp4" type="video/mp4">
+                </video>
+
+                <p>
+                    <a href="HTML/connexion.html">voir plus</a>
+                </p>
+            </div>
+
+        <div class="div-video-principale2">
+            <div style="justify-content: center;position: relative; align-items: center; display: inline; ">
+                <h5>Clip</h5>
+                <video style="border: 1px solid; position: relative; margin: 2px  2px  auto; width: 16%; "
+                    class="video-principale2" controls>
+                    <source src="IMG-VID/clip1.mp4" type="video/mp4">
+                </video>
+
+                <video style="border: 1px solid; position: relative; margin: 2px  2px  auto; width: 16%; "
+                    class="video-principale2" controls>
+                    <source src="IMG-VID/clip2.mp4" type="video/mp4">
+                </video>
+
+                <video style="border: 1px solid; position: relative; margin: 2px  2px  auto; width: 16%; "
+                    class="video-principale2" controls>
+                    <source src="IMG-VID/clip4.mp4" type="video/mp4">
+                </video>
+
+                <video style="border: 1px solid; position: relative; margin: 2px  2px  auto; width: 16%; "
+                    class="video-principale2" controls>
+                    <source src="IMG-VID/clip1.mp4" type="video/mp4">
+                </video>
+
+                <video style="border: 1px solid; position: relative; margin: 2px  2px  auto; width: 16%; "
+                    class="video-principale2" controls>
+                    <source src="IMG-VID/clip2.mp4" type="video/mp4">
+                </video>
+
+                <video style="border: 1px solid; position: relative; margin: 2px  2px  auto; width: 16%; "
+                    class="video-principale2" controls>
+                    <source src="IMG-VID/clip4.mp4" type="video/mp4">
+                </video>
+
+                <p>
+                    <a href="HTML/connexion.html">voir plus</a>
+                </p>
+            </div>
+        </div>
+
+            <div class="div-video-principale2">
+                <div style="justify-content: center;position: relative; align-items: center; display: inline; ">
+                    <h5>Audio</h5>
+                    <audio style="position: relative; margin: 2px  2px  auto; width: 16%; "
+                        class="video-principale2" controls>
+                        <source src="IMG-VID/clip2.mp4" type="video/mp4">  
+                    </audio> 
+
+                    <audio style=" position: relative; margin: 2px  2px  auto; width: 16%; "
+                        class="video-principale2" controls>
+                        <source src="IMG-VID/clip2.mp4" type="video/mp4">  
+                    </audio>
+
+                    <audio style="position: relative; margin: 2px  2px  auto; width: 16%; "
+                        class="video-principale2" controls>
+                        <source src="IMG-VID/clip2.mp4" type="video/mp4">
+                    </audio>
+
+                    <audio style="position: relative; margin: 2px  2px  auto; width: 16%; "
+                        class="video-principale2" controls>
+                        <source src="IMG-VID/clip2.mp4" type="video/mp4">
+                    </audio>
+
+                    <audio style="position: relative; margin: 2px  2px  auto; width: 16%; "
+                        class="video-principale2" controls>
+                        <source src="IMG-VID/clip2.mp4" aria-placeholder="ccd"
+                            type="video/mp4">
+                    </audio>
+
+                    <audio style="position: relative; margin: 2px  2px  auto; width: 16%; "
+                        class="video-principale2" controls>
+                        <source src="IMG-VID/clip2.mp4" aria-placeholder="ccd"
+                            type="video/mp4">
+                    </audio>
+
+                    <p>
+                        <a href="HTML/connexion.html">voir plus</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>       
+</div>   
+
+    <footer class="footer">
+        <div class="footer-section">
+            <h4>Liens utiles</h4>
+            <ul class="footer-links">
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">Séries</a></li>
+                <li><a href="#">Films</a></li>
+                <li><a href="#">Catégories</a></li>
+                <li><a href="#">Nouveautés</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Réseaux sociaux</h4>
+            <a href="#" class="social-icon"><i class='bx bxl-facebook-circle'></i></a>
+            <a href="#" class="social-icon"><i class='bx bxl-twitter'></i></a>
+            <a href="#" class="social-icon"><i class='bx bxl-instagram'></i></a>
+        </div>
+        <div class="footer-section">
+            <h4>Contact</h4>
+            <span class="contact-info">Email: contact@yaStreaming.com</span>
+            <span class="contact-info">Téléphone: +225 07 59 15 22 01</span>
+        </div>
+        <div class="footer-section">
+            <p class="footer-text">© 2023 YaStreaming. Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+</html>
