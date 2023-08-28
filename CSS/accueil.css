@@ -127,7 +127,7 @@ p {
 }
 .div-video-principale1 video{
     border-radius: 15px;
-    box-shadow: 1px 1px 1px 1px;
+   
 }
 
 /* footer */
@@ -179,7 +179,7 @@ a{
 }
 video{
     border-radius: 12px;
-    box-shadow: 1px 2px 3px rgb(34, 34, 34);
+   
     height: 150px;
 }
 
@@ -286,6 +286,68 @@ video{
 /* *{
     border: 2px solid red;
 } */
+
+/* Reset CSS */
+body, h1, h2, h3, h4, h5, h6, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Container */
+.tableau-bord {
+    background-color: #495E7B;
+  
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+
+
+
+/* Video Player */
+.conteneur-video {
+    margin-top: 20px;
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 5px;
+}
+.video-principale {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+/* Video Thumbnails */
+.div-video-principale1, .div-video-principale2 {
+   
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.video-principale3 {
+    width: 18%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Video/Audio Display */
+.div-video-principale2 video, .div-video-principale2 audio {
+    width: 23%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+
+
 
 
 

@@ -1,3 +1,5 @@
+/* Styles de base */
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -12,6 +14,7 @@ body {
 .conteneur-media {
   position: relative;
   width: 20%;
+  height: 100px;
   margin: 20px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
 }
@@ -32,12 +35,9 @@ audio {
 }
 
 .conteneur-media:hover .info-media {
-  opacity: 0;
   visibility: visible;
 }
-.div-music{
-  display: inline-flex;
-}
+
 .titre-media {
   font-size: 12px;
   font-weight: bold;
@@ -65,26 +65,20 @@ audio {
   opacity: 1;
 }
 
-.bouton-jouer {
-  color: white;
-  font-size: 50px;
-  cursor: pointer;
+@media (max-width: 1024px) {
+  .conteneur-media {
+    width: calc(33.33% - 40px);
+  }
 }
 
-.superposition-media:hover {
-  opacity: 0.8;
-}
-
-@media (max-width: 730px) {
+@media (max-width: 768px) {
   .conteneur-media {
     width: calc(50% - 40px);
   }
-
 }
 
-@media (max-width: 400px) {
+@media (max-width: 480px) {
   .conteneur-media {
-    width: 75%;
+    width: calc(100% - 40px);
   }
 }
-

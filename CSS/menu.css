@@ -21,6 +21,7 @@ body {
     height: auto;
   }
 
+
   .video-info {
     position: absolute;
     bottom: 0;
@@ -74,13 +75,39 @@ body {
   .video-superpose:hover {
     opacity: 0.8;
   }
-  @media (max-width: 730px) {
-    .video-container {
-      width: calc(50% - 40px);
-    }
-  }
+
   @media (max-width: 400px) {
     .video-container {
       width: 75%;
     }
   }
+/* Keep your existing CSS rules here */
+
+/* Adjust video-container width for larger screens */
+@media (min-width: 1024px) {
+  .video-container {
+    width: 16.66%; /* 1/6 of the available width for 6 columns */
+  }
+}
+
+/* Adjust video-container width for medium screens */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .video-container {
+    width: 25%; /* 1/4 of the available width for 4 columns */
+  }
+}
+
+/* Adjust video-container width for smaller screens */
+@media (max-width: 767px) {
+  .video-container {
+    width: 50%; /* 1/2 of the available width for 2 columns */
+  }
+}
+
+/* Further adjustments for very small screens */
+@media (max-width: 480px) {
+  .video-container {
+    width: 100%; /* Full width for single column */
+    margin: 10px 0; /* Adjust margin for better spacing */
+  }
+}
