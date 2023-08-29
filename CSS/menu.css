@@ -81,33 +81,33 @@ body {
       width: 75%;
     }
   }
-/* Keep your existing CSS rules here */
 
-/* Adjust video-container width for larger screens */
+
+
 @media (min-width: 1024px) {
   .video-container {
-    width: 16.66%; /* 1/6 of the available width for 6 columns */
+    width: 16.66%; 
   }
 }
 
-/* Adjust video-container width for medium screens */
+
 @media (max-width: 1023px) and (min-width: 768px) {
   .video-container {
-    width: 25%; /* 1/4 of the available width for 4 columns */
+    width: 25%; 
   }
 }
 
-/* Adjust video-container width for smaller screens */
+
 @media (max-width: 767px) {
   .video-container {
-    width: 50%; /* 1/2 of the available width for 2 columns */
+    width: 50%; 
   }
 }
 
-/* Further adjustments for very small screens */
+
 @media (max-width: 480px) {
   .video-container {
-    width: 100%; /* Full width for single column */
-    margin: 10px 0; /* Adjust margin for better spacing */
+    width: 100%; 
+    margin: 10px 0; 
   }
 }
